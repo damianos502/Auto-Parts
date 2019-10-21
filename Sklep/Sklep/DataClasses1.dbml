@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Sklep" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-J0OFJTH\SQLEXPRESS;Initial Catalog=Sklep;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="Sklep.Properties.Settings" SettingsPropertyName="SklepConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Czesci" Member="Czesci">
+    <Type Name="Czesci">
+      <Column Name="Id_Czesci" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Marka" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Model" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Rodzaj_Paliwa" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Silnik" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Typ_Czesci" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Nazwa_Czesci" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Numer_Katalogowy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Stan_Magazyn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Czesci_Zakupy" Member="Zakupy" ThisKey="Id_Czesci" OtherKey="Id_Czesci" Type="Zakupy" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Zakupy" Member="Zakupy">
+    <Type Name="Zakupy">
+      <Column Name="Id_Zakupu" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Id_Czesci" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Id_Klienta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ilosc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Data" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Czesci_Zakupy" Member="Czesci" ThisKey="Id_Czesci" OtherKey="Id_Czesci" Type="Czesci" IsForeignKey="true" />
+      <Association Name="Klient_Zakupy" Member="Klient" ThisKey="Id_Klienta" OtherKey="Id_Klienta" Type="Klient" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Klient" Member="Klient">
+    <Type Name="Klient">
+      <Column Name="Id_Klienta" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Firma" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Imie" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Nazwisko" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Adres" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Kod_Pocztowy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Miasto" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Telefon" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Notatki" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Association Name="Klient_Zakupy" Member="Zakupy" ThisKey="Id_Klienta" OtherKey="Id_Klienta" Type="Zakupy" />
+    </Type>
+  </Table>
+</Database>

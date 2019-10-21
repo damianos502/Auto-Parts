@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0A06B1D4-7BA3-4AB3-BBA7-3822A607EEE8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Sklep</RootNamespace>
+    <AssemblyName>Sklep</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CzesciOk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CzesciOk.Designer.cs">
+      <DependentUpon>CzesciOk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataClasses1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Logowanie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logowanie.Designer.cs">
+      <DependentUpon>Logowanie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KlienciOk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KlienciOk.Designer.cs">
+      <DependentUpon>KlienciOk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RapOk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RapOk.Designer.cs">
+      <DependentUpon>RapOk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SprzedOk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SprzedOk.Designer.cs">
+      <DependentUpon>SprzedOk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SzukajCzesci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SzukajCzesci.Designer.cs">
+      <DependentUpon>SzukajCzesci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SzukajKlient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SzukajKlient.Designer.cs">
+      <DependentUpon>SzukajKlient.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CzesciOk.resx">
+      <DependentUpon>CzesciOk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KlienciOk.resx">
+      <DependentUpon>KlienciOk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logowanie.resx">
+      <DependentUpon>Logowanie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="RapOk.resx">
+      <DependentUpon>RapOk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SprzedOk.resx">
+      <DependentUpon>SprzedOk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SzukajCzesci.resx">
+      <DependentUpon>SzukajCzesci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SzukajKlient.resx">
+      <DependentUpon>SzukajKlient.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataClasses1.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataClasses1.dbml.layout">
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\CzesciOk.datasource" />
+    <None Include="Properties\DataSources\KlienciOk.datasource" />
+    <None Include="Properties\DataSources\Klient.datasource" />
+    <None Include="Properties\DataSources\RapOk.datasource" />
+    <None Include="Properties\DataSources\SprzedOk.datasource" />
+    <None Include="Properties\DataSources\SzukajCzesci.datasource" />
+    <None Include="Properties\DataSources\SzukajKlient.datasource" />
+    <None Include="Properties\DataSources\SzukajKlienta.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
